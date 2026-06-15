@@ -27,14 +27,15 @@ The system handles purchases, installment scheduling, payment initiation, webhoo
 
 ---
 
-# 📦 Setup Instructions
+# Setup Instructions
 
-## 🔹 Option 1: Docker 
+## Option 1: Docker 
 
 ### 1. Clone the repository
 ```bash
 git clone <repo-url>
 cd bnpl
+1. cp .env.example .env
 2. Build and start containers
 docker compose up --build
 3. Run migrations
@@ -110,7 +111,7 @@ Payments confirmed via webhook
 Each successful payment creates a ledger entry
 Provides audit trail per purchase and merchant
 
-⚖️ Trade-offs
+##################### Trade-offs ############################
 
 Due to the limited time scope (4–6 hours), the following were simplified:
 
@@ -121,7 +122,8 @@ No refund or chargeback flows
 Minimal validation rules (kept lightweight)
 No event queue system (sync processing only)
 No advanced retry queues for webhook delivery
-🚧 What's Next (Future Improvements)
+
+###################### What's Next (Future Improvements) ##################################
 
 If this project were extended, I would add:
 
