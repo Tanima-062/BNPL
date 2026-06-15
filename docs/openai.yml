@@ -1,0 +1,27 @@
+openapi: 3.0.0
+
+info:
+  title: BNPL API
+  version: 1.0.0
+
+paths:
+
+  /api/purchases:
+    post:
+      summary: Create purchase
+
+  /api/purchases/{id}:
+    get:
+      summary: Get purchase
+
+  /api/payments/initiate:
+    post:
+      summary: Initiate payment
+
+  /api/webhooks/payments:
+    post:
+      summary: Payment webhook
+
+  /api/purchases/{id}/settle:
+    post:
+      summary: Early settlement

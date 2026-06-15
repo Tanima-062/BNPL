@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www
+    depends_on:
+      - postgres
+    environment:
+      DB_CONNECTION: pgsql
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: bnpl
+      DB_USERNAME: bnpl
+      DB_PASSWORD: secret
+
+  postgres:
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_DB: bnpl
+      POSTGRES_USER: bnpl
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5432:5432"
